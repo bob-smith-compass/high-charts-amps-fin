@@ -12,10 +12,10 @@ export default class Stock extends Component {
     }
     render() {
         return (
-            <div style={{ backgroundColor: 'lightyellow', padding: '25px' }}>
+            <div style={{ padding: '25px' }} className="ui inverted segment">
                 <h3>Hightcharts</h3>
                 {/* semantic ui */}
-                <div className="ui labeled button" tabIndex="0" onClick={this.handleClick}>
+                <div className="ui inverted labeled button" tabIndex="0" onClick={this.handleClick}>
                     <div className="ui basic blue button">
                         {/* <i className="fork icon"></i> Forks</div> */}
                         <i className="stock icon"></i> IBM</div>
