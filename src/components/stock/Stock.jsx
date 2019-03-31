@@ -7,7 +7,8 @@ export default class Stock extends Component {
     }
     handleClick() {
         console.log('From React');
-        window.launchWindow('https://openfin.co/documentation/getting-started/')
+        // window.launchWindow('https://openfin.co/documentation/getting-started/')
+        window.launchWindow('http://127.0.0.1:8087'); // http-server must be running on port 8087 from utility/highcharts
     }
     render() {
         return (
