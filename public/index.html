@@ -23,10 +23,50 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <!-- Hightcharts -->
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!--<script src="//code.highcharts.com/highcharts.js"></script>-->
+    <script src="//code.highcharts.com/stock/highstock.js"></script>
+    <script src="//code.highcharts.com/stock/modules/exporting.js"></script>
+    <!-- Hightcharts -->
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <!-- Hightcharts -->
+    
+    <script>
+     
+      $.getJSON('trend.json', function (data) {
+         
+         $('#container').highcharts('StockChart', {
+     
+             rangeSelector : {
+                 selected : 1
+             },
+     
+             title : {
+                 text : 'Cogsley Service Chat Trends'
+             },
+             tooltip: {
+                 style: {
+                     width: '200px'
+                 },
+                 valueDecimals: 4,
+                 shared : true
+             },
+             series : [{
+                 name : 'Messages',
+                 data : data,
+                 id : 'dataseries'}]    
+                 
+         });
+     });
+         
+     </script>
+ 
+     <div id="container"></div>
+    <!-- Hightcharts -->
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
