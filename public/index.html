@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="theme-color" content="#000000" />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="theme-color" content="#000000" />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -22,52 +20,76 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-    <!-- Hightcharts -->
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <!--<script src="//code.highcharts.com/highcharts.js"></script>-->
-    <script src="//code.highcharts.com/stock/highstock.js"></script>
-    <script src="//code.highcharts.com/stock/modules/exporting.js"></script>
-    <!-- Hightcharts -->
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!-- Hightcharts -->
-    
-    <script>
-     
-      $.getJSON('trend.json', function (data) {
-         
-         $('#container').highcharts('StockChart', {
-     
-             rangeSelector : {
-                 selected : 1
-             },
-     
-             title : {
-                 text : 'Cogsley Service Chat Trends'
-             },
-             tooltip: {
-                 style: {
-                     width: '200px'
-                 },
-                 valueDecimals: 4,
-                 shared : true
-             },
-             series : [{
-                 name : 'Messages',
-                 data : data,
-                 id : 'dataseries'}]    
-                 
-         });
-     });
-         
-     </script>
- 
-     <div id="container"></div>
-    <!-- Hightcharts -->
-    <!--
+  <title>React App</title>
+  <!-- Hightcharts -->
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <!--<script src="//code.highcharts.com/highcharts.js"></script>-->
+  <script src="//code.highcharts.com/stock/highstock.js"></script>
+  <script src="//code.highcharts.com/stock/modules/exporting.js"></script>
+  <!-- Hightcharts -->
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!-- Hightcharts -->
+
+  <script>
+
+    $.getJSON('trend.json', function (data) {
+
+      $('#container').highcharts('StockChart', {
+
+        rangeSelector: {
+          selected: 1
+        },
+
+        title: {
+          text: 'Cogsley Service Chat Trends'
+        },
+        tooltip: {
+          style: {
+            width: '200px'
+          },
+          valueDecimals: 4,
+          shared: true
+        },
+        series: [{
+          name: 'Messages',
+          data: data,
+          id: 'dataseries'
+        }]
+
+      });
+    });
+
+  </script>
+  <script>
+    //  OpenFin
+    /* Define a function that will launch a window */
+    async function launchWindow(url) {
+      /* Use the await keyword. The function will wait for the 
+      window object to instantiate before resuming execution */
+      const win = await fin.Window.create({
+        /* Provide initialization options to the new window */
+        name: "OpenFin Getting Started Guide",
+        url: url,
+        defaultWidth: 600,
+        defaultHeight: 400,
+        resizable: false,
+        autoShow: true
+      });
+      /* When the window object is finished building, this method will 
+      cause the Chromium Developer showDeveloperTools to be displayed */
+      await win.showDeveloperTools();
+    }
+  </script>
+  <button type="button"
+  onclick="launchWindow('https://openfin.co/documentation/getting-started/')">Launch New Window</button>
+
+  <div id="container"></div>
+  <!-- Hightcharts -->
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -77,5 +99,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+</body>
+
 </html>
