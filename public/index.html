@@ -35,10 +35,11 @@
   <!-- Hightcharts -->
 
   <script>
-
+/** 
+ * 
     $.getJSON('trend.json', function (data) {
 
-      $('#container').highcharts('StockChart', {
+      $('#chart').highcharts('StockChart', {
 
         rangeSelector: {
           selected: 1
@@ -62,6 +63,7 @@
 
       });
     });
+*/
 
   </script>
   <script>
@@ -87,7 +89,7 @@
   <button type="button"
   onclick="launchWindow('https://openfin.co/documentation/getting-started/')">Launch New Window</button>
 
-  <div id="container"></div>
+  <div id="chart"></div>
   <!-- Hightcharts -->
   <!--
       This HTML file is a template.
