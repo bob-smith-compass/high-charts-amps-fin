@@ -14,13 +14,12 @@ export default class Stock extends Component {
         return (
             <div style={{ backgroundColor: 'lightyellow', padding: '25px' }}>
                 <h3>Hightcharts</h3>
-                <button type="button"
-                    onClick={this.handleClick}>Launch New Window</button>
                 {/* semantic ui */}
-                <div className="ui labeled button" tabIndex="0">
+                <div className="ui labeled button" tabIndex="0" onClick={this.handleClick}>
                     <div className="ui basic blue button">
-                        <i className="fork icon"></i> Forks</div>
-                    <a className="ui basic left pointing blue label" >
+                        {/* <i className="fork icon"></i> Forks</div> */}
+                        <i className="stock icon"></i> IBM</div>
+                    <a className="ui basic left pointing blue label">
                         1,048</a>
                 </div>
 
